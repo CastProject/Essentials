@@ -6,6 +6,13 @@
                 "aliases": ["clean", "del"],
                 "args": "<number of messages>",
                 "perm": "moderator"
+            },
+            {
+                "file": "mute",
+                "aliases": ["m", "hush"],
+                "args": ["<user>", "<expiration = -1>"],
+                "description": "Mute a user",
+                "perm": "moderator"
             }
         ]
     }
