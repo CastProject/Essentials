@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "castapi": "CastProject/CastAPI#feature/permissions",
+    "mongoose": "^4.11.0"
+  }
+}
