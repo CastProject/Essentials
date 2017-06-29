@@ -1,5 +1,3 @@
-const Discord = require(`discord.js`);
-
 const CastAPI = require(`castapi`);
 const Command = CastAPI.Command;
 
@@ -13,9 +11,7 @@ class Purge extends Command {
     message.channel.fetchMessages({limit}).then(messages => {
       response.reply(`Purging ${limit} messages...`, null, false).then(msg => {
         message.channel.bulkDelete(messages).then(() => {
-          msg.edit(`${response.prefix(message.author.id)}: Successfully purged ${limit} messages`).then(() => msg.delete(response.properties.autoRemove * 1000))
-        }).catch(e => {
-          throw e
+          msg.edit(`${response.prefix(message.author.id)}: Successfully purged ${limit} messages`).then(() => msg.delete(response.properties.autoRemove * 1000).catch(e => null))
         })
       })
     })
