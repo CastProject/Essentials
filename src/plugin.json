@@ -1,0 +1,8 @@
+{
+    "bundleID": "com.ericrabil.cast.essentials",
+    "main": "essentials.js",
+    "commandsPath": "commands",
+    "disabledByDefault": false,
+    "version": "0.0.1",
+    "dm": true
+}

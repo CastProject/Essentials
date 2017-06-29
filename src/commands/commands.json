@@ -1,0 +1,12 @@
+{
+    "categories": {
+        "Moderation": [
+            {
+                "file": "purge",
+                "aliases": ["clean", "del"],
+                "args": "<number of messages>",
+                "perm": "moderator"
+            }
+        ]
+    }
+}
