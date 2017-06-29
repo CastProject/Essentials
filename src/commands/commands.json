@@ -13,6 +13,13 @@
                 "args": ["<user>", "<expiration = -1>"],
                 "description": "Mute a user",
                 "perm": "moderator"
+            },
+            {
+                "file": "nickname",
+                "aliases": ["nick", "n", "cname"],
+                "args": ["<...user> OR <...user> <name>"],
+                "description": "Change a users nickname or do a batch reset",
+                "perm": "moderator"
             }
         ]
     }
