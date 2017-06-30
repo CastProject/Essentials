@@ -24,8 +24,8 @@ class Mute extends Command {
   }
 
   execute(message, response, args) {
-    if (message.mentions.members < 1) {
-      return response.reply('Please specify a user to mute in the first argument.');
+    if (message.mentions.members !== 1) {
+      return response.reply('Please specify mention a user in the mute command.');
     }
     var target = message.mentions.members.first();
     var seconds = isNaN(args[1]) ? -1 : parseInt(args[1]);
