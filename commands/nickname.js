@@ -10,13 +10,12 @@ class Nickname extends Command {
     var count = 0;
     var reply = () => response.reply(`${success.active ? success.text : ``}${failed.active ? `${success.active ? `; ` : ``}${failed.text}` : ``}`);
     targets.forEach((target, index) => {
+      count++;
       target.setNickname(nickname).then(() => {
-        count++;
         success.active = true;
         success.text += ` <@${target.id}> `
         if (count === targets.length) return reply();
       }).catch(e => {
-        count++;
         failed.active = true;
         failed.text += `<@${target.id}> `
         if (count === targets.length) {
