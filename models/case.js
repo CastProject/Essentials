@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const Model = mongoose.model
 const Schema = mongoose.Schema
 
 var CaseSchema = new Schema({
