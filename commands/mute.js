@@ -24,8 +24,8 @@ class Mute extends Command {
   }
 
   execute(message, response, args) {
-    if (message.mentions.members !== 1) {
-      return response.reply('Please specify mention a user in the mute command.');
+    if (message.mentions.members.size !== 1) {
+      return response.reply('Please mention a user to mute');
     }
     var target = message.mentions.members.first();
     var seconds = isNaN(args[1]) ? -1 : parseInt(args[1]);
@@ -34,6 +34,7 @@ class Mute extends Command {
       this.plugin.mutedUpdate([message.guild]);
       mRole = this.getMuteRole(message.guild);
     }
+    this.plugin.createCase(target.roles.get(mRole.id) ? `unmute` : `mute`, message.author.id, target.id);
     if (target.roles.get(mRole.id)) {
       target.removeRole(mRole.id).then(() => {
         response.reply(`Successfully unmuted <@${target.id}>`);
@@ -43,7 +44,6 @@ class Mute extends Command {
         response.reply(`Successfully muted <@${target.id}>${seconds >= 2 ? ` for ${seconds} seconds` : ``}`);
       });
     }
-    
   }
 }
 

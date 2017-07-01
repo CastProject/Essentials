@@ -1,4 +1,5 @@
 const CastAPI = require('castapi')
+const Case = require('./models/case')
 
 const MuteSettings = {
   name: 'Muted',
@@ -14,6 +15,15 @@ class Essentials extends CastAPI.Plugin {
     this.muteSettings = MuteSettings;
     this.mutedUpdate().then(() => {
       this.log('Essentials plugin was enabled.');
+    })
+  }
+
+  createCase(caseType, issuerID, issueeID, message = null) {
+    return new Promise((resolve, reject) => {
+      var data = {caseType, issuerID, issueeID};
+      if (message) data.message = message;
+      var newCase = new Case(data);
+      newCase.save().then(resolve).catch(reject);
     })
   }
 
