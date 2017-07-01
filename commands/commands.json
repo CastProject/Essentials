@@ -20,6 +20,13 @@
                 "args": ["<...user> OR <...user> <name>"],
                 "description": "Change a users nickname or do a batch reset",
                 "perm": "moderator"
+            },
+            {
+                "file": "kick",
+                "aliases": ["k", "ki"],
+                "args": ["<...user>", "[message]"],
+                "description": "Kick user(s) from the guild",
+                "perm": "moderator"
             }
         ]
     }
