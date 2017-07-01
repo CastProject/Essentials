@@ -10,7 +10,7 @@
             {
                 "file": "mute",
                 "aliases": ["m", "hush"],
-                "args": ["<user>", "<expiration = -1>"],
+                "args": ["<user>", "[expiration]"],
                 "description": "Mute a user",
                 "perm": "moderator"
             },
